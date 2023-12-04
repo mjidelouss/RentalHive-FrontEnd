@@ -1,0 +1,51 @@
+<p>Equipments ( {{ equipments.length }} )</p>
+<div>
+      <button>
+            add equipment
+      </button>
+</div>
+<div>
+      <form (submit)="onSubmit()">
+            <p>name</p>
+            <input type="text" name="name" [(ngModel)] = "toSave.name">
+            <p>quantity</p>
+            <input type="number" name="quantity"  [(ngModel)] = "toSave.quantity" >
+            <p>Family id</p>
+            <input type="number" name="family_id"  [(ngModel)] = "toSave.equipmentFamilyId" >
+            <button type="submit">save</button>
+      </form>
+</div>
+<div>
+    <table>
+        <thead>
+              <tr>
+                    <th scope="col">
+                          ID
+                    </th>
+
+                    <th scope="col">
+                          name
+                    </th>
+
+                    <th scope="col">
+                          quantity
+                    </th>
+              </tr>
+        </thead>
+        <tbody>
+
+              <tr *ngFor="let equipment of equipments">
+                    <td>
+                      {{ equipment.id }}
+                    </td>
+                    <td>
+                      {{ equipment.name }}
+                    </td>
+                    <td>
+                      {{ equipment.quantity }}
+                    </td>
+              </tr>
+
+        </tbody>
+  </table>
+</div>

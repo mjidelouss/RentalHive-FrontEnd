@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'rentalHiveapp' title`, () => {
+  it(`should have the 'live-coding-angular' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('rentalHiveapp');
+    expect(app.title).toEqual('live-coding-angular');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, rentalHiveapp');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, live-coding-angular');
   });
 });
