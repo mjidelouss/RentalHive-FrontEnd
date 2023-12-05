@@ -1,27 +1,21 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
-import { EquipmentComponent } from './components/equipment/equipment.component';
+import { RouterOutlet, RouterLink } from '@angular/router';
+import { EquipmentsCalendarComponent } from './components/equipments-calendar/equipments-calendar.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, EquipmentComponent],
+  imports: [CommonModule, RouterOutlet, RouterLink, EquipmentsCalendarComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'live-coding-angular';
-  response = "empty";
+  title = 'Rental Hive';  
+  constructor() {}
+  
+  ngOnInit(){
+    
+  };
 
-  constructor (private http : HttpClient){}
-
-  ngOnInit():void {
-    // this.http.get<any>('http://localhost:8081/api/equipment').subscribe(
-    //   data => {
-    //     this.response = data.content;
-    //   }
-    // )
-  }
 }
