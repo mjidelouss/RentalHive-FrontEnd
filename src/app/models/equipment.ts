@@ -4,5 +4,6 @@ export class Equipment {
         public name?: string,
         public quantity?: number,
         public equipmentFamilyId?: number,
+        public category?: string,
     ) {}
 }

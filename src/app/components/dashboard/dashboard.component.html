@@ -1,0 +1,50 @@
+<div class="d-flex" id="wrapper">
+                <!-- Sidebar -->
+                <div class="bg-white" id="sidebar-wrapper">
+                    <div class="sidebar-heading ms-2 py-4 text-black fs-4 fw-bold text-uppercase border-bottom"><i
+                            class=""></i>Rental <span style="color: hsl(33, 75%, 62%)">Hive</span>
+                    </div>
+                    <div class="list-group list-group-flush my-3">
+                        <a href="" class="list-group-item list-group-item-action bg-transparent active"><i
+                            class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
+                            <a href="" class="list-group-item list-group-item-action bg-transparent second-text text-black fw-bold"><i
+                            class="fa fa-user me-2 text-black"></i>Calendar</a>
+                    </div>
+                </div>
+                <!-- Page Content -->
+                <div id="page-content-wrapper">
+                    <!-- Welcome user Message -->
+                    <div class="container-fluid px-4">
+                        <div class="row my-4">
+                            <div class="d-flex justify-content-between">
+                                <h3 class="fs-4 text-black">Available Equipments</h3>
+                            <button class="btn btn-primary" (click)="openAddModal()">Add Equipment</button>
+                            </div>
+                        </div>
+                            <div class="col table-responsive mb-2">
+                                <table id="data-table" class="table bg-white rounded shadow-sm table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" class="text-blue">#Id</th>
+                                            <th scope="col" class="text-blue">Name</th>
+                                            <th scope="col" class="text-blue">Quantity</th>
+                                            <th scope="col" class="text-blue">Category</th>
+                                            <th width="100px" class="text-blue">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="">
+                                        <tr *ngFor="let equipment of equipments">
+                                            <td class="fw-bolder">{{ equipment.id }}</td>
+                                            <td class="fw-bolder">{{ equipment.name }}</td>
+                                            <td class="fw-bolder">{{ equipment.quantity }}</td>
+                                            <td class="fw-bolder" >{{ equipment.category }}</td>
+                                            <td class="d-flex">
+                                                <button (click)="openEditModal()" class="btn btn-success opacity-50">Edit</button>
+                                                <button (click)="deleteEquip(equipment.id)" type="submit" class="btn btn-danger opacity-75">Delete</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>

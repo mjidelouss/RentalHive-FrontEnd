@@ -1,0 +1,30 @@
+`
+<div class="modal-header">
+  <h3 class="text-center">Add Equipment</h3>
+</div>
+<div class="modal-body">
+  <form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" name="name" formControlName="name" [(ngModel)]="toSave.name" required>
+    </div>
+    <div class="form-group">
+      <label for="quantity">Quantity:</label>
+      <input type="number" class="form-control" name="quantity" formControlName="quantity" [(ngModel)]="toSave.quantity" required>
+    </div>
+    <div class="form-group">
+      <label for="category">Category:</label>
+      <select class="form-control" name="equipmentFamilyId" formControlName="category" [(ngModel)]="toSave.equipmentFamilyId" required>
+            <option value="1">Excavators</option>
+            <option value="2">Bulldozers</option>
+            <option value="3">Loaders</option>
+            <option value="4">Cranes</option>
+      </select>
+    </div>
+    <div class="mt-4 d-flex justify-content-between">
+      <button type="button" class="btn btn-secondary" (click)="activeModal.dismiss('Cancel click')">Cancel</button>
+      <button type="submit" class="btn btn-info">Save</button>
+    </div>
+  </form>
+</div>
+`
